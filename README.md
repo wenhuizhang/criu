@@ -7,7 +7,7 @@
 [![CircleCI](https://circleci.com/gh/checkpoint-restore/criu.svg?style=svg)](
     https://circleci.com/gh/checkpoint-restore/criu)
 
-<p align="center"><img src="https://criu.org/w/images/1/1c/CRIU.svg" width="256px"/></p>
+
 
 ## CRIU -- A project to implement checkpoint/restore functionality for Linux
 
@@ -37,8 +37,14 @@ Pages worth starting with are:
 - [Examples of more advanced usage](https://criu.org/Category:HOWTO)
 - Troubleshooting can be hard, some help can be found [here](https://criu.org/When_C/R_fails), [here](https://criu.org/What_cannot_be_checkpointed) and [here](https://criu.org/FAQ)
 
-### Checkpoint and restore of simple loop process
-[<p align="center"><img src="https://asciinema.org/a/232445.png" width="572px" height="412px"/></p>](https://asciinema.org/a/232445)
+### Installation 
+
+```
+apt --fix-broken install
+sudo apt install protobuf-compiler python3-protobuf libc6 libgnutls30 libnftables1
+
+make
+```
 
 ## Advanced features
 
@@ -67,9 +73,3 @@ One of the CRIU features is the ability to save and restore state of a TCP socke
 without breaking the connection. This functionality is considered to be useful by
 itself, and we have it available as the [libsoccr library](https://criu.org/Libsoccr).
 
-## Licence
-
-The project is licensed under GPLv2 (though files sitting in the lib/ directory are LGPLv2.1).
-
-All files in the images/ directory are licensed under the Expat license (so-called MIT).
-See the images/LICENSE file.
