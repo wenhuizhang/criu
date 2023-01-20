@@ -46,7 +46,7 @@ Pages worth starting with are:
 
 ## Installation 
 
-Change python
+Change python to python3
 ```
 python2 --version
 python3 --version
