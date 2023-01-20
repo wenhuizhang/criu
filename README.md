@@ -41,7 +41,7 @@ Pages worth starting with are:
 
 ```
 apt --fix-broken install
-sudo apt install protobuf-compiler python3-protobuf libc6 libgnutls30 libnftables1
+sudo apt install protobuf-compiler python3-protobuf libc6 libgnutls30 libnftables1  protobuf-c-compiler
 
 make
 ```
