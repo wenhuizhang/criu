@@ -30,12 +30,36 @@ Linux containers, but later grew to more sophisticated and flexible tool. It is 
 used by (integrated into) OpenVZ, LXC/LXD, Docker, and other software, project gets tremendous
 help from the community, and its packages are included into many Linux distributions.
 
+
+
+
+
+
 The project home is at http://criu.org. This wiki contains all the knowledge base for CRIU we have.
 Pages worth starting with are:
 - [Installation instructions](http://criu.org/Installation)
 - [A simple example of usage](http://criu.org/Simple_loop)
 - [Examples of more advanced usage](https://criu.org/Category:HOWTO)
 - Troubleshooting can be hard, some help can be found [here](https://criu.org/When_C/R_fails), [here](https://criu.org/What_cannot_be_checkpointed) and [here](https://criu.org/FAQ)
+
+
+
+## Installation 
+```
+apt --fix-broken install
+apt install protobuf-compiler libc6 libgnutls30 libnftables1  
+apt-get install  protobuf-c-compiler
+apt-get install libprotobuf-dev libprotobuf-c-dev protobuf-c-compiler protobuf-compiler python3-protobuf
+apt-get install pkg-config python-ipaddress libbsd-dev iproute2  libnftables-dev libcap-dev   libnl-3-dev libnet-dev
+apt-get install libaio-dev libgnutls28-dev python3-future 
+apt-get install asciidoc
+
+
+make
+make install
+```
+
+
 
 ### Checkpoint and restore of simple loop process
 [<p align="center"><img src="https://asciinema.org/a/232445.png" width="572px" height="412px"/></p>](https://asciinema.org/a/232445)
@@ -67,9 +91,3 @@ One of the CRIU features is the ability to save and restore state of a TCP socke
 without breaking the connection. This functionality is considered to be useful by
 itself, and we have it available as the [libsoccr library](https://criu.org/Libsoccr).
 
-## Licence
-
-The project is licensed under GPLv2 (though files sitting in the lib/ directory are LGPLv2.1).
-
-All files in the images/ directory are licensed under the Expat license (so-called MIT).
-See the images/LICENSE file.
