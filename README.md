@@ -45,6 +45,25 @@ Pages worth starting with are:
 
 
 ## Installation 
+
+Change python
+```
+python2 --version
+python3 --version
+
+ls /usr/bin/python*
+sudo update-alternatives --list python
+
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+
+sudo update-alternatives --config python
+python --version
+
+```
+
+Install
 ```
 apt --fix-broken install
 apt install protobuf-compiler libc6 libgnutls30 libnftables1  
@@ -53,6 +72,7 @@ apt-get install libprotobuf-dev libprotobuf-c-dev protobuf-c-compiler protobuf-c
 apt-get install pkg-config python-ipaddress libbsd-dev iproute2  libnftables-dev libcap-dev   libnl-3-dev libnet-dev
 apt-get install libaio-dev libgnutls28-dev python3-future 
 apt-get install asciidoc
+apt-get install python3-distutils
 
 
 make
