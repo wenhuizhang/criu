@@ -41,9 +41,16 @@ Pages worth starting with are:
 
 ```
 apt --fix-broken install
-sudo apt install protobuf-compiler python3-protobuf libc6 libgnutls30 libnftables1  protobuf-c-compiler
+apt install protobuf-compiler libc6 libgnutls30 libnftables1  
+apt-get install  protobuf-c-compiler
+apt-get install libprotobuf-dev libprotobuf-c-dev protobuf-c-compiler protobuf-compiler python3-protobuf
+apt-get install pkg-config python-ipaddress libbsd-dev iproute2  libnftables-dev libcap-dev   libnl-3-dev libnet-dev
+apt-get install libaio-dev libgnutls28-dev python3-future 
+apt-get install asciidoc
+
 
 make
+make install
 ```
 
 ## Advanced features
