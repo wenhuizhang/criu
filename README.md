@@ -61,8 +61,6 @@ make install
 
 
 
-### Checkpoint and restore of simple loop process
-[<p align="center"><img src="https://asciinema.org/a/232445.png" width="572px" height="412px"/></p>](https://asciinema.org/a/232445)
 
 ## Advanced features
 
