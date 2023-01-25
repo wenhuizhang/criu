@@ -45,6 +45,25 @@ Pages worth starting with are:
 
 
 ## Installation 
+
+Change python to python3
+```
+python2 --version
+python3 --version
+
+ls /usr/bin/python*
+sudo update-alternatives --list python
+
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+
+sudo update-alternatives --config python
+python --version
+
+```
+
+Install
 ```
 apt --fix-broken install
 apt install protobuf-compiler libc6 libgnutls30 libnftables1  
@@ -52,17 +71,51 @@ apt-get install  protobuf-c-compiler
 apt-get install libprotobuf-dev libprotobuf-c-dev protobuf-c-compiler protobuf-compiler python3-protobuf
 apt-get install pkg-config python-ipaddress libbsd-dev iproute2  libnftables-dev libcap-dev   libnl-3-dev libnet-dev
 apt-get install libaio-dev libgnutls28-dev python3-future 
-apt-get install asciidoc
+apt-get install asciidoc xmlto
+apt-get install python3-distutils
+
 
 
 make
 make install
+criu check
+
+
+make docker-build
+
+
+```
+To use
+
+```
+root@n223-247-006:~/criu# pwd
+/root/criu
+root@n223-247-006:~/criu# /root/criu/criu/criu 
+
+Usage:
+  criu dump|pre-dump -t PID [<options>]
+  criu restore [<options>]
+  criu check [--feature FEAT]
+  criu page-server
+  criu service [<options>]
+  criu dedup
+  criu lazy-pages -D DIR [<options>]
+
+Commands:
+  dump           checkpoint a process/tree identified by pid
+  pre-dump       pre-dump task(s) minimizing their frozen time
+  restore        restore a process/tree
+  check          checks whether the kernel support is up-to-date
+  page-server    launch page server
+  service        launch service
+  dedup          remove duplicates in memory dump
+  cpuinfo dump   writes cpu information into image file
+  cpuinfo check  validates cpu information read from image file
+
+Try -h|--help for more info
 ```
 
 
-
-### Checkpoint and restore of simple loop process
-[<p align="center"><img src="https://asciinema.org/a/232445.png" width="572px" height="412px"/></p>](https://asciinema.org/a/232445)
 
 ## Advanced features
 
