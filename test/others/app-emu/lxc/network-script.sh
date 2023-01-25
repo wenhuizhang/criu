@@ -1,4 +1,6 @@
 #!/bin/bash
+set -x
+set -m
 
 [ -z "$CR_IP_TOOL" ] && CR_IP_TOOL=ip
 

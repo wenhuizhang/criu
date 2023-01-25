@@ -1,5 +1,8 @@
 #!/bin/bash
+set -x
+set -m 
 
+echo ${criu}
 source ../../env.sh || exit 1
 
 [ -z "$CR_IP_TOOL" ] && CR_IP_TOOL=ip
