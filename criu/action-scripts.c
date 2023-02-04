@@ -84,6 +84,7 @@ static int run_shell_scripts(const char *action)
 	list_for_each_entry(script, &scripts, node) {
 		int err;
 		pr_debug("\t[%s]\n", script->path);
+		printf("script path : %s\n", script->path);
 		err = cr_system(-1, -1, -1, script->path, (char *[]){ script->path, NULL }, 0);
 		if (err)
 			pr_err("Script %s exited with %d\n", script->path, err);
