@@ -29,6 +29,8 @@ CFLAGS			+= -iquote $(ARCH_DIR)/include
 CFLAGS			+= -iquote .
 CFLAGS			+= $(shell $(PKG_CONFIG) --cflags libnl-3.0)
 CFLAGS			+= $(CONFIG-DEFINES)
+# wenhui flag for debug
+CFLAGS			+= -g
 
 ifeq ($(GMON),1)
 	CFLAGS		+= -pg
