@@ -1987,8 +1987,10 @@ static int restore_rseq_cs(void)
 	for_each_pstree_item(item) {
 		int i;
 
-		if (!task_alive(item))
-			continue;
+		//wenhui: if task alive, kill it to restore the register state
+		if (task_alive(item)){
+			kill(item->pid->real, SIGSTOP);
+		}
 
 		if (item->nr_threads == 1) {
 			item->threads[0].real = item->pid->real;
