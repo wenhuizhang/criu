@@ -118,8 +118,8 @@ Try -h|--help for more info
 ## CRIU Usage 
 
 ```
-criu dump -D checkpointimg -t 1234
-criu restore -d -D checkpointimg
+criu dump -D ./ -t 1234 --shell-jobs
+criu restore -d -D ./ --shell-jobs
 
 ```
 
