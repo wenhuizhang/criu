@@ -15,7 +15,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-
+#include <sys/time.h>
 #include <dlfcn.h>
 
 #include <sys/utsname.h>
@@ -115,6 +115,10 @@ int main(int argc, char *argv[], char *envp[])
 	bool has_exec_cmd = false;
 	bool has_sub_command;
 	int state = PARSING_GLOBAL_CONF;
+
+
+	struct timeval start;
+	gettimeofday(&start, NULL);
 
 	BUILD_BUG_ON(CTL_32 != SYSCTL_TYPE__CTL_32);
 	BUILD_BUG_ON(__CTL_STR != SYSCTL_TYPE__CTL_STR);
@@ -313,8 +317,15 @@ int main(int argc, char *argv[], char *envp[])
 		return ret != 0;
 	}
 
-	if (opts.mode == CR_LAZY_PAGES)
-		return cr_lazy_pages(opts.daemon_mode) != 0;
+	if (opts.mode == CR_LAZY_PAGES){
+	        struct timeval currentTime;
+		double time;
+		cr_lazy_pages(opts.daemon_mode);
+		gettimeofday(&currentTime, NULL);
+		time = (currentTime.tv_sec - start.tv_sec)* (int)1e6 + currentTime.tv_usec - start.tv_usec;
+		printf("time takes ... %f\n", time);
+		return 0;
+	}
 
 	if (opts.mode == CR_CHECK)
 		return cr_check() != 0;
